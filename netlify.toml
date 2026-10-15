@@ -1,0 +1,33 @@
+[build]
+  publish = "site"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22.12.0"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/thermal-reports/export"
+  to = "/.netlify/functions/thermal-export"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/thermal-reports"
+  to = "/.netlify/functions/thermal-reports"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/thermal-stats"
+  to = "/.netlify/functions/thermal-stats"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/gemini"
+  to = "/.netlify/functions/gemini"
+  status = 200
+  force = true
